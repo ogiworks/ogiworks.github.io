@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>MeVita — Privacy policy</title>
+<meta name="description" content="Which data MeVita keeps on your device and which connections it makes.">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" type="image/png" href="varliklar/favicon.png">
+<link rel="alternate" hreflang="tr" href="gizlilik.html">
+<link rel="stylesheet" href="varliklar/site.css">
+</head>
+<body>
+<header class="ust"><div class="kap"><a class="marka" href="privacy.html"><img src="varliklar/logo.png" alt="" width="32" height="32"><span>MeVita</span></a><nav class="gezinme" aria-label="Site"><a class="dil" href="gizlilik.html" hreflang="tr" lang="tr">Türkçe</a></nav></div></header>
+<main>
+<div class="metin"><div class="kap dar"><p class="kaynak-not">This is an English translation. The Turkish text, from which the in-app policy is also generated, is the authoritative version: <a href="gizlilik.html" lang="tr">Türkçe</a>.</p><h1>MeVita — Privacy and Personal Data Protection</h1>
+<p><strong>Last updated:</strong> 16 October 2026</p>
+<p>The same text is also available inside the app (ℹ️ → Privacy and protection of personal data), so it can be read offline too.</p>
+<hr>
+<h2>In short</h2>
+<p>None of the health data you enter leaves your device. No account, no server, no analytics, no ads, no cookies.</p>
+<p><strong>All</strong> connections the app makes to the outside world are listed one by one below. We do not say &quot;nothing leaves your device&quot;, because that would not be true — a web app at least downloads its own files.</p>
+<h2>What stays on your device</h2>
+<p>Your profile (age, sex, height, weight, goals, dietary restrictions), your meals, water and other drinks, weight history, sleep, mood, body measurements, exercises, supplements and medications, blood values, cycle tracking, fasting records, favourites and streaks — all of it is kept only in the browser storage of the device you use (<code>localStorage</code>, prefix <code>mevita:v1:</code>).</p>
+<p>Most of this is <strong>health data</strong>. The developer cannot access it; no copy of it exists on any server.</p>
+<h2>What leaves your device</h2>
+<p>None of it contains the health data you enter.</p>
+<table><thead><tr><th>What</th><th>When</th><th>What is sent</th></tr></thead><tbody><tr><td><strong>Fonts</strong> — <code>fonts.googleapis.com</code>, <code>fonts.gstatic.com</code></td><td>When the app opens (until they are cached)</td><td>IP address and browser information. No app data is sent.</td></tr><tr><td><strong>Barcode lookup</strong> — <code>world.openfoodfacts.org</code></td><td>Only when you enter a barcode number</td><td>Only the barcode number. Who you are, your profile or why you are asking is not sent.</td></tr><tr><td><strong>Hosting</strong> — <code>ogulcanilkilinc.github.io</code> (GitHub Pages)</td><td>While the app files are downloaded</td><td>IP address and browser information, in GitHub's server logs.</td></tr><tr><td><strong>Update check (Android app only)</strong> — <code>ogulcanilkilinc.github.io</code></td><td>Every time the APK opens; and while a new version is downloaded, if there is one</td><td>IP address and device information, in GitHub's server logs. Your records are not sent.</td></tr></tbody></table>
+<p>The browser version does not use the camera; the barcode number is typed in.</p>
+<p><strong>Barcode scanning with the camera in the Android app (optional).</strong> If you choose to scan a barcode with the camera, the scanning is done by the Google Play services barcode scanner. The image is processed on your phone and only the scanned number reaches MeVita; MeVita itself has no camera permission. Google may collect device and usage information while running this service (Google's ML Kit terms). If you don't want to use the camera, you can type the number.</p>
+<p><strong>Reading nutrition labels in the Android app (optional).</strong> If you choose &quot;Read label&quot;, you take a photo of the nutrition table on the back of the package with your phone's own camera screen; MeVita still has no camera permission. The text in the photo is read <strong>on your phone</strong> with Google's ML Kit text recognition library; the photo is not sent anywhere and is deleted when reading is finished. The values read are not written anywhere until you check and save them. Google may collect device and usage information while running this library (Google's ML Kit terms).</p>
+<p>The update plugin in the Android app (Capgo, open source) sends usage statistics and error reports to its own server by default. <strong>This is turned off</strong> (<code>capacitor.config.json</code> → <code>statsUrl</code>, <code>updateUrl</code>, <code>channelUrl</code> empty); every APK build checks that it really went into the APK that way.</p>
+<p><strong>Health Connect (Android app only, optional).</strong> If you allow it, MeVita reads <strong>only step, sleep, weight and workout (duration, distance, active calories) data</strong> from Health Connect on your phone. It has no permission to read other health data such as heart rate. It writes nothing; the data read does not leave your phone and is not sent anywhere. Steps are shown on screen; sleep and weight are written to your log only when you tap &quot;Save&quot;, and workouts recorded by your watch only when you tap &quot;Add&quot;. Which app a weight came from (e.g. your scale's app) is kept next to the record, again only on your phone. You can revoke the permission at any time in your phone's Health Connect settings. If Health Connect is not on your phone or needs an update, the Health Connect page on Google Play (<code>play.google.com</code>) opens when you tap; MeVita sends no data there.</p>
+<p>Reminder notifications in the Android app (medication, supplement, meal) are scheduled <strong>on the phone itself</strong>; no data is sent anywhere for this. On the lock screen the content of a notification (for example the name of a medication) is hidden, only &quot;MeVita&quot; is shown; the content can be read once the phone is unlocked.</p>
+<p>The Android app's <strong>vibration</strong> permission is used only to vibrate the phone when the fitness rest timer ends; it can be turned off in Settings. If you save the daily summary card with <strong>&quot;Save to gallery&quot;</strong>, the image is written to your phone's Pictures › MeVita folder and is not sent anywhere.</p>
+<p>When you install the app on your home screen and use it offline, the first three requests do not happen either — the files are cached on the device.</p>
+<p>Google and GitHub are based abroad; in this respect the IP/log data above may count as a transfer abroad. This is not data collected by the app itself but a natural consequence of downloading files over the internet.</p>
+<h2>What does not exist</h2>
+<p>Account · password · server · database · analytics · advertising · cookies · third-party tracking SDK · location access · contact list access.</p>
+<h2>Meal photos stay on your device</h2>
+<p>You can optionally add a photo to a meal. The photo is stored in your phone's own storage (IndexedDB), is <strong>not sent to any server</strong>, and no recognition or analysis is run on it — it is just a visual diary for you to look at.</p>
+<p>It is kept in a store <strong>separate</strong> from your main data; this is a deliberate choice: even if photos fill up, your meal, weight and blood value records are not affected.</p>
+<p>Photos are <strong>not included in the backup file</strong>, because the backup is a text-based file and photos would make it too large to be usable. If you delete the app, the photos are deleted too.</p>
+<h2>Food recognition from photos is turned off</h2>
+<p>This feature is not connected to any service. Even if you choose a photo, it is not sent anywhere and the app says so clearly. If it is ever enabled, this text will be updated <strong>first</strong>.</p>
+<h2>Deleting and moving your data</h2>
+<ul><li><strong>Back up / restore:</strong> Other → Settings → 💾 My data</li><li><strong>Delete:</strong> clear the browser's site data, or uninstall the app if you installed it.</li></ul>
+<p>Because the data is only with you, deleting it is also only in your hands. When you uninstall the app the data goes too — <strong>don't uninstall without a backup.</strong></p>
+<h2>Under Turkish data protection law (KVKK)</h2>
+<p>Article 11 of Turkey's Law No. 6698 on the Protection of Personal Data gives you the right to access, correct and delete your personal data and to learn about its transfer.</p>
+<p>In MeVita these rights are directly in your hands: because the data is on your device, you carry out access, correction, deletion and export yourself from within the app. Since the developer keeps no copy, there is no access or deletion request to direct at them.</p>
+<p>For the IP/log data listed above, the relevant parties are Google and GitHub; their own privacy policies apply.</p>
+<h2>Contact</h2>
+<p><a href="mailto:ogiworks.dev@gmail.com">ogiworks.dev@gmail.com</a> — write for your questions or for anything you find wrong in this text.</p>
+<hr>
+<blockquote><p>This text was written by looking at the app's actual behaviour and is not legal advice. If the app is submitted to a store or comes to process other people's data, it should be reviewed by a lawyer.</p></blockquote></div></div>
+</main>
+<footer class="alt-bilgi"><div class="kap"><span>© 2026 MeVita · Developer: ogiworks</span><nav aria-label="Footer links"><a href="mailto:ogiworks.dev@gmail.com">ogiworks.dev@gmail.com</a></nav><span class="sag">Nutrition, water, sleep and workout tracking — your data stays on your phone.</span></div></footer>
+</body>
+</html>

@@ -1,0 +1,114 @@
+/* MeVita tanıtım sitesi. Uygulamanın renk dili, ama uygulamadan bağımsız bir dosya.
+   Dış kaynak yok: yazı tipleri sistemden (Google Fonts gibi bir istek ziyaretçinin
+   IP'sini üçüncü tarafa gönderirdi). */
+:root{
+  --bg:#F3F6F1; --surface:#FFFFFF; --surface-soft:#E8F0E5;
+  --text:#1F2B22; --text-muted:#56665A; --border:#D8E3D6;
+  --accent:#3F6B4C; --accent-strong:#2E5039; --on-accent:#FFFFFF;
+  --sea:#2F7A93;
+  --radius:18px; --radius-s:10px;
+  --serif: "Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
+  --sans: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#131A15; --surface:#1C251F; --surface-soft:#223027;
+    --text:#E6EEE7; --text-muted:#9BAC9F; --border:#33433A;
+    --accent:#8CC4A0; --accent-strong:#A9D8B9; --on-accent:#10241A;
+    --sea:#7CC0D6;
+  }
+}
+*{box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.6;}
+a{color:var(--accent-strong);text-underline-offset:3px;}
+img{max-width:100%;height:auto;}
+.kap{max-width:1040px;margin:0 auto;padding:0 20px;}
+.dar{max-width:760px;}
+
+/* Üst çubuk */
+.ust{border-bottom:1px solid var(--border);background:color-mix(in srgb,var(--bg) 88%,transparent);position:sticky;top:0;backdrop-filter:blur(8px);z-index:5;}
+.ust .kap{display:flex;align-items:center;gap:16px;min-height:60px;}
+.marka{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text);font-family:var(--serif);font-size:21px;font-weight:600;}
+.marka img{width:32px;height:32px;}
+.gezinme{margin-left:auto;display:flex;gap:4px;flex-wrap:wrap;align-items:center;}
+.gezinme a{text-decoration:none;color:var(--text-muted);padding:8px 10px;border-radius:8px;font-size:15px;}
+.gezinme a:hover,.gezinme a[aria-current="page"]{color:var(--text);background:var(--surface-soft);}
+.gezinme .dil{border:1px solid var(--border);}
+
+/* Giriş */
+.giris{padding:64px 0 40px;}
+.giris .kap{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center;}
+.giris h1{font-family:var(--serif);font-weight:600;font-size:clamp(34px,5vw,54px);line-height:1.08;margin:0 0 18px;letter-spacing:-.01em;}
+.giris h1 em{font-style:italic;color:var(--accent);}
+.giris p.alt{font-size:clamp(17px,2vw,19px);color:var(--text-muted);margin:0 0 26px;max-width:34em;}
+.giris-logo{justify-self:center;width:min(300px,70vw);aspect-ratio:1;border-radius:36px;background:var(--surface);border:1px solid var(--border);display:grid;place-items:center;}
+.giris-logo img{width:78%;}
+.vaatler{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 28px;padding:0;list-style:none;}
+.vaatler li{background:var(--surface);border:1px solid var(--border);border-radius:99px;padding:6px 14px;font-size:14.5px;font-weight:600;}
+.vaatler li::before{content:"✓ ";color:var(--accent);}
+.dugme{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:0 22px;border-radius:12px;font-weight:600;text-decoration:none;background:var(--accent);color:var(--on-accent);border:0;font-size:16px;}
+.dugme.pasif{background:var(--surface);color:var(--text-muted);border:1px dashed var(--border);cursor:default;}
+.not{font-size:13.5px;color:var(--text-muted);margin-top:10px;}
+
+/* Bölümler */
+section.bolum{padding:44px 0;}
+section.bolum + section.bolum{border-top:1px solid var(--border);}
+.bolum h2{font-family:var(--serif);font-weight:600;font-size:clamp(26px,3.2vw,34px);line-height:1.15;margin:0 0 10px;}
+.bolum .giris-yazi{color:var(--text-muted);max-width:42em;margin:0 0 28px;}
+.izgara{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.kart{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;}
+.kart h3{font-size:17px;margin:0 0 6px;}
+.kart p{margin:0;color:var(--text-muted);font-size:15px;}
+.kart .simge{font-size:24px;line-height:1;margin-bottom:10px;display:block;}
+/* Ekran görüntüleri: masaüstünde dört sütun, telefonda yatay kaydırılan şerit */
+.ekranlar{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+.ekran{margin:0;text-align:center;}
+.ekran img{display:block;width:100%;border-radius:26px;border:6px solid #1A221D;background:var(--surface);box-shadow:0 14px 30px -18px rgba(0,0,0,.45);}
+.ekran figcaption{margin-top:12px;font-weight:600;font-size:15px;}
+.gizlilik-blok{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.gizlilik-blok ul{margin:0;padding-left:20px;}
+.gizlilik-blok li{margin:4px 0;}
+.uyari{background:var(--surface-soft);border-radius:var(--radius-s);padding:14px 16px;font-size:14.5px;color:var(--text-muted);}
+
+/* Metin sayfaları (gizlilik, destek) */
+.metin{padding:40px 0 56px;}
+.metin h1{font-family:var(--serif);font-weight:600;font-size:clamp(28px,4vw,40px);line-height:1.15;margin:0 0 8px;}
+.metin h2{font-size:20px;margin:34px 0 8px;}
+.metin h3{font-size:17px;margin:24px 0 6px;}
+.metin table{border-collapse:collapse;width:100%;font-size:14.5px;display:block;overflow-x:auto;}
+.metin th,.metin td{border:1px solid var(--border);padding:8px 10px;text-align:left;vertical-align:top;}
+.metin th{background:var(--surface-soft);}
+.metin code{font-size:13.5px;background:var(--surface-soft);padding:1px 5px;border-radius:5px;overflow-wrap:anywhere;}
+.metin hr{border:0;border-top:1px solid var(--border);margin:28px 0;}
+.metin blockquote{margin:20px 0;padding:12px 16px;border-left:3px solid var(--accent);background:var(--surface);color:var(--text-muted);border-radius:0 var(--radius-s) var(--radius-s) 0;}
+.metin blockquote p{margin:0;}
+.kaynak-not{font-size:13.5px;color:var(--text-muted);background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-s);padding:10px 14px;margin:0 0 24px;}
+details.sss{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-s);margin:10px 0;}
+details.sss summary{cursor:pointer;padding:14px 16px;font-weight:600;min-height:48px;display:flex;align-items:center;}
+details.sss > div{padding:0 16px 14px;color:var(--text-muted);}
+details.sss > div p{margin:6px 0;}
+
+/* Alt bilgi */
+.alt-bilgi{border-top:1px solid var(--border);padding:28px 0 40px;font-size:14px;color:var(--text-muted);}
+.alt-bilgi .kap{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center;}
+.alt-bilgi nav{display:flex;gap:16px;flex-wrap:wrap;}
+.alt-bilgi .sag{margin-left:auto;}
+
+@media (max-width:820px){
+  .giris{padding:36px 0 24px;}
+  .giris .kap{grid-template-columns:1fr;gap:24px;}
+  .giris-logo{order:-1;width:120px;border-radius:24px;}
+  .izgara{grid-template-columns:1fr 1fr;}
+  .gizlilik-blok{grid-template-columns:1fr;}
+  .ekranlar{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:16px;padding-bottom:8px;margin:0 -20px;padding-left:20px;padding-right:20px;}
+  .ekran{flex:0 0 min(68%,250px);scroll-snap-align:center;}
+}
+@media (max-width:560px){
+  .kap{padding:0 16px;}
+  .izgara{grid-template-columns:1fr;}
+  .marka span{display:none;}
+  .gezinme a{padding:8px 8px;font-size:14px;}
+  .alt-bilgi .sag{margin-left:0;}
+}

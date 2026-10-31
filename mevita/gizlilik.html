@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>MeVita — Gizlilik politikası</title>
+<meta name="description" content="MeVita hangi verileri cihazında tutar, hangi bağlantıları kurar.">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" type="image/png" href="varliklar/favicon.png">
+<link rel="alternate" hreflang="en" href="privacy.html">
+<link rel="stylesheet" href="varliklar/site.css">
+</head>
+<body>
+<header class="ust"><div class="kap"><a class="marka" href="gizlilik.html"><img src="varliklar/logo.png" alt="" width="32" height="32"><span>MeVita</span></a><nav class="gezinme" aria-label="Site"><a class="dil" href="privacy.html" hreflang="en" lang="en">English</a></nav></div></header>
+<main>
+<div class="metin"><div class="kap dar"><p class="kaynak-not">Bu sayfa, uygulamanın içindeki gizlilik metniyle aynı kaynaktan üretilir.</p><h1>MeVita — Gizlilik ve Kişisel Verilerin Korunması</h1>
+<p><strong>Son güncelleme:</strong> 16 Ekim 2026</p>
+<p>Bu metnin aynısı uygulamanın içinde de yer alır (ℹ️ → Gizlilik ve kişisel verilerin korunması), böylece çevrimdışıyken de okunabilir.</p>
+<hr>
+<h2>Özetle</h2>
+<p>Girdiğin hiçbir sağlık verisi cihazından çıkmıyor. Hesap yok, sunucu yok, analitik yok, reklam yok, çerez yok.</p>
+<p>Uygulamanın dışarıyla kurduğu <strong>tüm</strong> bağlantılar aşağıda tek tek yazılı. &quot;Hiçbir şey dışarı gitmiyor&quot; demiyoruz, çünkü bu doğru olmazdı — bir web uygulaması en azından kendi dosyalarını indirir.</p>
+<h2>Cihazında kalanlar</h2>
+<p>Profilin (yaş, cinsiyet, boy, kilo, hedefler, diyet kısıtlamaları), öğünlerin, su ve diğer içecekler, kilo geçmişin, uykun, ruh halin, vücut ölçülerin, egzersizlerin, takviye ve ilaçların, kan değerlerin, döngü takibin, oruç kayıtların, favorilerin ve serilerin — hepsi yalnızca kullandığın cihazın tarayıcı deposunda (<code>localStorage</code>, <code>mevita:v1:</code> öneki) tutulur.</p>
+<p>Bunların çoğu <strong>sağlık verisidir</strong>. Geliştirici bu verilere erişemez; hiçbir kopyası hiçbir sunucuda yoktur.</p>
+<h2>Cihazdan çıkanlar</h2>
+<p>Hiçbiri girdiğin sağlık verisini içermez.</p>
+<table><thead><tr><th>Ne</th><th>Ne zaman</th><th>Ne gönderiliyor</th></tr></thead><tbody><tr><td><strong>Yazı tipleri</strong> — <code>fonts.googleapis.com</code>, <code>fonts.gstatic.com</code></td><td>Uygulama açılırken (önbelleğe alınana kadar)</td><td>IP adresi ve tarayıcı bilgisi. Uygulama verisi gönderilmez.</td></tr><tr><td><strong>Barkod sorgusu</strong> — <code>world.openfoodfacts.org</code></td><td>Yalnızca sen bir barkod numarası girdiğinde</td><td>Sadece barkod numarası. Kim olduğun, profilin ya da neden sorduğun gönderilmez.</td></tr><tr><td><strong>Barındırma</strong> — <code>ogulcanilkilinc.github.io</code> (GitHub Pages)</td><td>Uygulama dosyaları indirilirken</td><td>IP adresi ve tarayıcı bilgisi, GitHub'ın sunucu kayıtlarında.</td></tr><tr><td><strong>Güncelleme kontrolü (yalnızca Android uygulaması)</strong> — <code>ogulcanilkilinc.github.io</code></td><td>APK her açıldığında; yeni sürüm varsa indirilirken</td><td>IP adresi ve cihaz bilgisi, GitHub'ın sunucu kayıtlarında. Kayıtların gönderilmez.</td></tr></tbody></table>
+<p>Tarayıcı sürümünde kamera kullanılmaz; barkod numarası elle girilir.</p>
+<p><strong>Android uygulamasında kamerayla barkod (isteğe bağlı).</strong> Barkodu kamerayla okutmayı seçersen okumayı Google Play hizmetlerinin barkod okuyucusu yapar. Görüntü telefonunda işlenir ve MeVita'ya yalnızca okunan numara gelir; MeVita'nın kendisinin kamera izni yoktur. Google bu hizmeti çalıştırırken cihaz ve kullanım bilgisi toplayabilir (Google'ın ML Kit koşulları). Kamerayı kullanmak istemezsen numarayı elle yazabilirsin.</p>
+<p><strong>Android uygulamasında besin etiketi okuma (isteğe bağlı).</strong> &quot;Etiketi oku&quot;yu seçersen paketin arkasındaki besin tablosunun fotoğrafını telefonun kendi kamera ekranıyla çekersin; MeVita'nın kamera izni yine yoktur. Fotoğraftaki yazı Google'ın ML Kit metin tanıma kütüphanesiyle <strong>telefonunda</strong> okunur; fotoğraf hiçbir yere gönderilmez ve okuma bitince silinir. Okunan değerler sen kontrol edip kaydedene kadar hiçbir yere yazılmaz. Google bu kütüphaneyi çalıştırırken cihaz ve kullanım bilgisi toplayabilir (Google'ın ML Kit koşulları).</p>
+<p>Android uygulamasındaki güncelleme eklentisi (Capgo, açık kaynak) varsayılan olarak kendi sunucusuna kullanım istatistiği ve hata bildirimi gönderir. <strong>Bu kapatılmıştır</strong> (<code>capacitor.config.json</code> → <code>statsUrl</code>, <code>updateUrl</code>, <code>channelUrl</code> boş); APK derlemesi her seferinde bunun APK'ya gerçekten öyle girdiğini denetler.</p>
+<p><strong>Health Connect (yalnızca Android uygulaması, isteğe bağlı).</strong> İzin verirsen MeVita telefonundaki Health Connect'ten <strong>yalnızca adım, uyku, kilo ve antrenman (süre, mesafe, aktif kalori) verisini okur</strong>. Nabız gibi diğer sağlık verilerini okuma izni yoktur. Hiçbir şey yazmaz; okunan veri telefonundan çıkmaz ve hiçbir yere gönderilmez. Adım ekranda gösterilir; uyku ve kilo yalnızca sen &quot;Kaydet&quot;, saatinin kaydettiği antrenmanlar yalnızca sen &quot;Ekle&quot; dersen günlüğüne yazılır. Kilonun hangi uygulamadan geldiği (ör. tartının uygulaması) kaydın yanında, yine yalnızca telefonunda tutulur. İzni istediğin an telefonun Health Connect ayarlarından geri alabilirsin. Health Connect telefonunda yoksa ya da güncellenmesi gerekiyorsa, sen dokunursan Google Play'deki Health Connect sayfası (<code>play.google.com</code>) açılır; MeVita oraya hiçbir veri göndermez.</p>
+<p>Android uygulamasındaki hatırlatma bildirimleri (ilaç, takviye, öğün) <strong>telefonun kendisinde</strong> planlanır; bunun için hiçbir yere veri gönderilmez. Kilitli ekranda bildirimin içeriği (örneğin ilacın adı) gizlenir, yalnızca &quot;MeVita&quot; görünür; içerik telefonun kilidi açılınca okunur.</p>
+<p>Android uygulamasının <strong>titreşim</strong> izni yalnızca fitness dinlenme sayacı bitince telefonu titretmek için kullanılır; Ayarlar'dan kapatılabilir. Günlük özet kartını <strong>&quot;Galeriye kaydet&quot;</strong> ile kaydedersen görsel telefonunun Resimler › MeVita klasörüne yazılır, hiçbir yere gönderilmez.</p>
+<p>Uygulamayı ana ekrana kurup çevrimdışı kullandığında ilk üç istek de olmaz — dosyalar cihazda önbelleklenmiştir.</p>
+<p>Google ve GitHub yurt dışında yerleşiktir; yukarıdaki IP/kayıt verisi bu yönüyle yurt dışına aktarım sayılabilir. Bunlar uygulamanın kendi topladığı veriler değil, internet üzerinden dosya indirmenin doğal sonucudur.</p>
+<h2>Olmayanlar</h2>
+<p>Hesap · parola · sunucu · veritabanı · analitik · reklam · çerez · üçüncü taraf takip SDK'sı · konum erişimi · kişi listesi erişimi.</p>
+<h2>Öğün fotoğrafları cihazında kalır</h2>
+<p>Öğüne isteğe bağlı fotoğraf ekleyebilirsin. Fotoğraf telefonunun kendi deposunda (IndexedDB) saklanır, <strong>hiçbir sunucuya gönderilmez</strong> ve üzerinde hiçbir tanıma ya da analiz çalıştırılmaz — sadece senin bakman için bir görsel günlük.</p>
+<p>Ana verinden <strong>ayrı</strong> bir depoda tutulur; bu bilinçli bir seçim: fotoğraflar dolsa bile öğün, kilo ve kan değeri kayıtların etkilenmez.</p>
+<p>Fotoğraflar <strong>yedek dosyasına dahil değildir</strong>, çünkü yedek metin tabanlı bir dosya ve fotoğraflar onu kullanılamayacak kadar büyütürdü. Uygulamayı silersen fotoğraflar da silinir.</p>
+<h2>Fotoğrafla yemek tanıma kapalıdır</h2>
+<p>Bu özellik hiçbir servise bağlı değildir. Bir fotoğraf seçsen bile hiçbir yere gönderilmez ve uygulama bunu açıkça söyler. İleride etkinleştirilirse bu metin <strong>önce</strong> güncellenecektir.</p>
+<h2>Verilerini silmek ve taşımak</h2>
+<ul><li><strong>Yedekle / geri yükle:</strong> Diğer → Ayarlar → 💾 Verilerim</li><li><strong>Sil:</strong> tarayıcının site verilerini temizle, ya da kurduysan uygulamayı kaldır.</li></ul>
+<p>Veriler yalnızca sende olduğu için silme işlemi de yalnızca senin elindedir. Uygulamayı kaldırdığında veriler de gider — <strong>yedek almadan kaldırma.</strong></p>
+<h2>KVKK kapsamında</h2>
+<p>6698 sayılı Kişisel Verilerin Korunması Kanunu'nun 11. maddesi kişisel verilerine erişme, düzeltme, silme ve aktarımını öğrenme haklarını verir.</p>
+<p>MeVita'da bu haklar doğrudan senin elindedir: veriler cihazında olduğu için erişme, düzeltme, silme ve dışa aktarma işlemlerini uygulama içinden kendin yaparsın. Geliştiricinin sakladığı bir kopya olmadığı için ona yöneltilecek bir erişim ya da silme talebi de yoktur.</p>
+<p>Yukarıda sayılan IP/kayıt verileri için ilgili taraflar Google ve GitHub'dır; onların kendi gizlilik politikaları geçerlidir.</p>
+<h2>İletişim</h2>
+<p><a href="mailto:ogiworks.dev@gmail.com">ogiworks.dev@gmail.com</a> — soruların ya da bu metinde yanlış gördüğün bir şey için yaz.</p>
+<hr>
+<blockquote><p>Bu metin uygulamanın gerçek davranışına bakılarak yazılmıştır ve hukuki danışmanlık değildir. Uygulama mağazaya sunulacaksa ya da başkalarının verisini işleyecek hâle gelirse bir hukukçuya gözden geçirtilmesi gerekir.</p></blockquote></div></div>
+</main>
+<footer class="alt-bilgi"><div class="kap"><span>© 2026 MeVita · Geliştirici: ogiworks</span><nav aria-label="Alt bağlantılar"><a href="mailto:ogiworks.dev@gmail.com">ogiworks.dev@gmail.com</a></nav><span class="sag">Beslenme, su, uyku ve antrenman takibi — verilerin telefonunda.</span></div></footer>
+</body>
+</html>
